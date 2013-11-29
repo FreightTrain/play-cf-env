@@ -1,7 +1,8 @@
-@(message: String)
-
-@main("Welcome to Play 2.1") {
-    
-    @play20.welcome(message, style = "Java")
-    
+@environment = {
+    <h1>@Application.getEnvironment.toString</h1>
 }
+
+@main("play-cf-env-title")(environment) {
+    <h1>Environment</h1>
+}
+

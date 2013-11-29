@@ -1,15 +1,11 @@
-@(title: String)(content: Html)
-
+@(title: String)(sidebar: Html)(content: Html)
 <!DOCTYPE html>
-
 <html>
     <head>
         <title>@title</title>
-        <link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/main.css")">
-        <link rel="shortcut icon" type="image/png" href="@routes.Assets.at("images/favicon.png")">
-        <script src="@routes.Assets.at("javascripts/jquery-1.9.0.min.js")" type="text/javascript"></script>
     </head>
     <body>
-        @content
+        <section class="content">@content</section>
+        <section class="sidebar">@sidebar</section>
     </body>
 </html>

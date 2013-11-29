@@ -59,6 +59,19 @@ If you are curious and want to know more about the CLI you can [view the source 
 		play! 2.1.0 (using Java 1.7.0_40 and Scala 2.10.0), http://www.playframework.org
 		...
 
+## Running the project
+
+1. Login to the CloudFoundry server using GCF
+
+	$ gcf login		
+
+
+2. Push your application to Cloud Foundry
+
+	    $ cd play-cf-env
+	    $ play dist
+	    $ gcf push play-cf-env -p dist/play-cf-env-1.0-SNAPSHOT.zip
+
 
 ## Editing the project (optional)
 

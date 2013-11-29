@@ -17,6 +17,8 @@ Thumbs.db
 # Play generated files #
 ########################
 play-cf-env/target
+play-cf-env/dist
+play-cf-env/logs
 
 
 # Idea generated files #
