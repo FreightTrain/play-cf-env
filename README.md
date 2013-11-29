@@ -60,3 +60,18 @@ If you are curious and want to know more about the CLI you can [view the source 
 		...
 
 
+## Editing the project (optional)
+
+1. Generate the IntelliJ Idea project 
+
+	    $ cd play-cf-env
+	    $ play idea with-sources=yes
+
+2. Open IntelliJ Idea
+3. Open the generated project in IntelliJ <br>
+   File -> Open -> [Select the play-cf-env directory]
+   
+   
+   
+
+

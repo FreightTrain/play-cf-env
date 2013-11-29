@@ -13,5 +13,13 @@ Thumbs.db
 *~
 *.swp
 
+
+# Play generated files #
+########################
 play-cf-env/target
 
+
+# Idea generated files #
+########################
+.idea_modules
+.idea
