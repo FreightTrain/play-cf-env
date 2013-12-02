@@ -1,5 +1,5 @@
 @environment = {
-
+    <h2>System Environment Variables</h2>
     <table border="1">
         <tr>
             <th>Variable</th><th>Value</th>
@@ -13,7 +13,37 @@
     </table>
 }
 
-@main("play-cf-env")(environment) {
+@runtime = {
+    <h2>JVM Runtime Parameters</h2>
+    <table border="1">
+        <tr>
+            <th>Parameter</th>
+        </tr>
+        @for(param <- Application.getJVMRuntimeParameters) {
+            <tr>
+                <td>@param</td>
+            </tr>
+        }
+    </table>
+}
+
+@playConfig = {
+    <h2><a href="http://www.playframework.com/documentation/2.2.1/Configuration">Play Application Configuration (Typesafe Config)</a></h2>
+    <table border="1">
+        <tr>
+            <th>Key</th><th>Value</th>
+        </tr>
+        @for(key <- Application.getPlayConfigurationKeys) {
+            <tr>
+                <td>@key</td>
+                <td>@Application.getPrintablePlayVariable(key)</td>
+            </tr>
+        }
+    </table>
+}
+
+@main("play-cf-env")(environment)(runtime)(playConfig)  {
     <h1>@Application.getTitle</h1>
+    <p>Information about a running Play Framework application on Cloud Foundry.</p>
 }
 

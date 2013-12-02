@@ -1,11 +1,13 @@
-@(title: String)(sidebar: Html)(content: Html)
+@(title: String)(environment: Html)(runtime: Html)(playConfig: Html)(description: Html)
 <!DOCTYPE html>
 <html>
     <head>
         <title>@title</title>
     </head>
     <body>
-        <section class="content">@content</section>
-        <section class="sidebar">@sidebar</section>
+        <section class="description">@description</section>
+        <section class="runtime">@runtime</section>
+        <section class="environment">@environment</section>
+        <section class="play">@playConfig</section>
     </body>
 </html>
