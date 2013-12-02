@@ -1,8 +1,19 @@
 @environment = {
-    <h1>@Application.getEnvironment.toString</h1>
+
+    <table border="1">
+        <tr>
+            <th>Variable</th><th>Value</th>
+        </tr>
+        @for(env <- Application.getEnvironmentVariableNames) {
+            <tr>
+                <td>@env</td>
+                <td>@Application.getEnvironment.get(env)</td>
+            </tr>
+        }
+    </table>
 }
 
-@main("play-cf-env-title")(environment) {
-    <h1>Environment</h1>
+@main("play-cf-env")(environment) {
+    <h1>@Application.getTitle</h1>
 }
 

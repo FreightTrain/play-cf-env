@@ -63,8 +63,7 @@ If you are curious and want to know more about the CLI you can [view the source 
 
 1. Login to the CloudFoundry server using GCF
 
-	$ gcf login		
-
+        $ gcf login		
 
 2. Push your application to Cloud Foundry
 

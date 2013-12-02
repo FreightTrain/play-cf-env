@@ -1,33 +1,40 @@
 package controllers;
 
-import play.api.templates.Html;
 import play.mvc.*;
 
-import scala.collection.mutable.*;
-import scala.collection.mutable.StringBuilder;
 import views.html.index;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
+import java.util.*;
 import java.util.Map;
+import java.util.logging.Logger;
 
 public class Application extends Controller {
+
+    private static Logger sLogger = Logger.getLogger(Application.class.getName());
+    private static List<String> sEnvironmentVariableNames = null;
+
 
     /**
      * @return The title of the app
      */
     public static String getTitle() {
-        return "play-cf-env";
+        return "Play CF Env";
     }
 
     /**
-     * @return The system environment variable map
+     * @return A sorted list containing the names if all currently set environment variables
      */
     public static List<String> getEnvironmentVariableNames() {
-        List<String> names = new ArrayList<String>();
-        names.addAll(System.getenv().keySet());
-        return names;
+
+        if (sEnvironmentVariableNames == null) {
+            synchronized (Application.class) {
+                List<String> names = new ArrayList<String>();
+                names.addAll(System.getenv().keySet());
+                Collections.sort(names);
+                sEnvironmentVariableNames = names;
+            }
+        }
+        return sEnvironmentVariableNames;
     }
 
     /**
@@ -41,11 +48,8 @@ public class Application extends Controller {
      * @return page content
      */
     public static Result index() {
-        return ok(System.getenv().toString());
-    }
-
-    public static Html getContent(){
-        return new Html(new StringBuilder());
+        sLogger.info("Rendering with environment: " + getEnvironment());
+        return ok(index.render());
     }
 
 }
