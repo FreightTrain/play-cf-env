@@ -72,9 +72,9 @@ If you are curious and want to know more about the CLI you can [view the source 
 	    $ gcf push play-cf-env -p dist/play-cf-env-1.0-SNAPSHOT.zip
 
 
-## Editing the project (optional)
+## Editing the project
 
-1. Generate the IntelliJ Idea project 
+1. Generate the IntelliJ Idea project
 
 	    $ cd play-cf-env
 	    $ play idea with-sources=yes
