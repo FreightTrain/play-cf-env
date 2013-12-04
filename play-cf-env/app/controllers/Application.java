@@ -119,4 +119,10 @@ public class Application extends Controller {
         return ok(index.render());
     }
 
+    public static String getCurrentTimeStamp(){
+        String time = new Date().toString();
+        Logger.info("Rendering time: " + time);
+        return time;
+    }
+
 }

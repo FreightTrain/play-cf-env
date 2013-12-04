@@ -45,5 +45,6 @@
 @main("play-cf-env")(environment)(runtime)(playConfig)  {
     <h1>@Application.getTitle</h1>
     <p>Information about a running Play Framework application on Cloud Foundry.</p>
+    <p>Rendered at: @Application.getCurrentTimeStamp</p>
 }
 
