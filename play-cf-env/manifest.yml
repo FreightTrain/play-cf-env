@@ -1,8 +1,7 @@
 ---
 applications:
-- name: play-cf-env-3
-  memory: 512M
+- name: play-cf-env
+  memory: 256M
   instances: 1
-  host: play-cf-env-3
-  domain: ft3.cpgpaas.net
+  host: play-cf-env
   path: dist/play-cf-env-1.0-SNAPSHOT.zip
