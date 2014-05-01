@@ -2,6 +2,8 @@
 
 ## Introduction
 
+This is a Cloud Foundry sample application to display the environment details of a Play! Framework Application.
+
 ## Setup
 
 ### Install the CF command line tools
@@ -10,17 +12,14 @@ To use Cloud Foundry you will need to install the Cloud Foundry command line too
 
 1. Download the CLI binary for your system
 
-    * [CF CLI binary for OSX (x64)](http://go-cli.s3.amazonaws.com/gcf-darwin-amd64.tgz)   
-    * [CF CLI binary for Linux (x64)](http://go-cli.s3.amazonaws.com/gcf-linux-amd64.tgz)
-    * [CF CLI binary for Windows (x64)](http://go-cli.s3.amazonaws.com/gcf-windows-amd64.zip)
+    * [CF CLI Installers](https://github.com/cloudfoundry/cli#installers)   
 
-2. You will need to uncompress the downloaded binay and make sure the **gcf** binary is in your $PATH
-3. Test your installation
+2. Test your installation
 
 
-		tastle@tastle-mac $ gcf
+		tastle@tastle-mac $ ccf
 		NAME:
-		   gcf - A command line tool to interact with Cloud Foundry
+		   cf - A command line tool to interact with Cloud Foundry
 		
 		USAGE:
 		   [environment variables] gcf [global options] command [arguments...] [command options]
@@ -63,13 +62,13 @@ If you are curious and want to know more about the CLI you can [view the source 
 
 1. Login to the CloudFoundry server using GCF
 
-        $ gcf login		
+        $ cf login		
 
 2. Push your application to Cloud Foundry
 
 	    $ cd play-cf-env
 	    $ play dist
-	    $ gcf push play-cf-env -p dist/play-cf-env-1.0-SNAPSHOT.zip
+	    $ cf push play-cf-env -p dist/play-cf-env-1.0-SNAPSHOT.zip
 
 
 ## Editing the project
